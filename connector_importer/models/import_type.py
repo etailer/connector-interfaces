@@ -96,8 +96,8 @@ class ImportType(models.Model):
     def _check_options(self):
         no_options = self.browse()
         for rec in self:
-            if not rec.options and not rec.settings:
-                no_options.append(rec)
+            if not rec.options:
+                no_options += rec
             # TODO: validate yaml schema (maybe w/ Cerberus?)
         if no_options:
             raise exceptions.UserError(
@@ -142,6 +142,7 @@ class ImportType(models.Model):
             "name": "importer.record",
         },
     }
+<<<<<<< HEAD
 
     # TODO: trash it for v14
     def _legacy_available_importers(self):
@@ -167,3 +168,5 @@ class ImportType(models.Model):
                 if _line == lines[-1]:
                     is_last_importer = True
                 yield (model_name.strip(), importer.strip(), is_last_importer)
+=======
+>>>>>>> 23f98a7 (fixup! fixup! connector_importer: migrate to v16)
