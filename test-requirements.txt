@@ -1,0 +1,2 @@
+odoo-test-helper
+odoo-addon-component @ git+https://github.com/OCA/connector@refs/pull/463/head#subdirectory=setup/component
